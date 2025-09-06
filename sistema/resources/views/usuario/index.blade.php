@@ -20,7 +20,7 @@
                                         <i class="fas fa-search"></i>
                                         Buscar
                                     </button>
-                                    <a href="" class="btn btn-primary">Nuevo</a>
+                                    <a href="{{route('usuario.create')}}" class="btn btn-primary">Nuevo</a>
                                 </div>
                             </div>
                         </form>
