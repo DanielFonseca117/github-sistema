@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,10 +9,12 @@ Route::get('/', function () {
 
 
 
-Route::get('/app', function () {
-    return view('usuario.index');
-});
+//Route::get('/app', function () {
+    //return view('usuario.index');
+//});
 
-Route::get('/agregar', function () {
-    return view('usuario.action');
-});
+//Route::get('/agregar', function () {
+    //return view('usuario.action');
+//});
+
+Route::resource('usuario', UserController::class);

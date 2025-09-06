@@ -31,33 +31,44 @@
                                     <th style="width: 5rem">ID</th>
                                     <th style="width: 5rem">Nombre</th>
                                     <th style="width: 5rem">Correo</th>
+                                    <th style="width: 5rem">Activo</th>
                                     <th style="width: 5rem">Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <th>Daniel Fonseca</th>
-                                    <th>danifon44@gmail.com</th>
+                                @if(count($registro)<=0)
+                                    <tr>
+                                        <td colspan="4">No hay registros que coincidan con la busqueda</td>
+                                    </tr>
+                                    @else
+
+                                    @foreach($registro as $reg)
+                                    <tr>
+                                    <th>{{$reg->id}}</th>
+                                    <th>{{$reg->name}}</th>
+                                    <th>{{$reg->email}}</th>
+                                    @if($reg->activo==1)
+                                        <th>Si</th>
+                                    @else
+                                        <th>No</th>
+                                    @endif
+                                    <!--th>{{$reg->activo}}</th-->
+
                                     <td><a href="{{ url('agregar') }}" class="btn btn-warning btn-sm">
                                             <i class="bi bi-pencil-fill"></i></a>
                                         <button class="btn btn-danger btn-sm">
                                             <i class="bi bi-trash-fill"></i></button>
                                     </td>
                                 </tr>
+                                @endforeach
+                                @endif
                             </tbody>
                         </table>
                         </div>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer clearfix">
-                        <ul class="pagination pagination-sm m-0 float-end">
-                            <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                        </ul>
+                        {{$registro->appends(['texto'=>$texto])}}
                     </div>
                 </div>
                 <!-- /.card -->
