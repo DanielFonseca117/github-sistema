@@ -12,6 +12,18 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
+                        <form action="" method="get">
+                            <div class="input-group">
+                                <input name="texto" type="text" class="form-control" value="" placeholder="Ingrese texto a buscar">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                        Buscar
+                                    </button>
+                                    <a href="" class="btn btn-primary">Nuevo</a>
+                                </div>
+                            </div>
+                        </form>
                         <div class="table-responsive mt-3">
                         <table class="table table-bordered">
                             <thead>
@@ -27,7 +39,7 @@
                                     <th>1</th>
                                     <th>Daniel Fonseca</th>
                                     <th>danifon44@gmail.com</th>
-                                    <td><a href="#" class="btn btn-warning btn-sm">
+                                    <td><a href="{{ url('agregar') }}" class="btn btn-warning btn-sm">
                                             <i class="bi bi-pencil-fill"></i></a>
                                         <button class="btn btn-danger btn-sm">
                                             <i class="bi bi-trash-fill"></i></button>

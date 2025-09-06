@@ -9,5 +9,9 @@ Route::get('/', function () {
 
 
 Route::get('/app', function () {
+    return view('usuario.index');
+});
+
+Route::get('/agregar', function () {
     return view('usuario.action');
 });
